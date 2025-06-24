@@ -31,25 +31,17 @@ class SimpleWidgetContent : GlanceAppWidget() {
     @Composable
     private fun MyContent() {
         Column(
-            modifier = GlanceModifier.fillMaxSize()
+            modifier = GlanceModifier
+                .fillMaxSize()
+                .padding(16.dp)
                 .background(GlanceTheme.colors.background),
             verticalAlignment = Alignment.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.Start
         ) {
-            Text(
-                text = "¿A dónde quieres dirigirte?",
-                modifier = GlanceModifier.padding(12.dp)
-            )
-            Row(horizontalAlignment = Alignment.CenterHorizontally) {
-                Button(
-                    text = "Home",
-                    onClick = actionStartActivity<MainActivity>()
-                )
-                Button(
-                    text = "Work",
-                    onClick = actionStartActivity<WorkActivity>() // ✅ Aquí se lanza la nueva vista
-                )
-            }
+            Text(text = "Últimas acciones:")
+            Text(text = "• Abrió la app")
+            Text(text = "• Realizó un pedido")
+            Text(text = "• Cerró sesión")
         }
     }
 }
