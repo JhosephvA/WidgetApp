@@ -31,8 +31,7 @@ class SimpleWidgetContent : GlanceAppWidget() {
     @Composable
     private fun MyContent() {
         Column(
-            modifier = GlanceModifier
-                .fillMaxSize()
+            modifier = GlanceModifier.fillMaxSize()
                 .background(GlanceTheme.colors.background),
             verticalAlignment = Alignment.Top,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -43,8 +42,12 @@ class SimpleWidgetContent : GlanceAppWidget() {
             )
             Row(horizontalAlignment = Alignment.CenterHorizontally) {
                 Button(
-                    text = "Página Principal",
+                    text = "Home",
                     onClick = actionStartActivity<MainActivity>()
+                )
+                Button(
+                    text = "Work",
+                    onClick = actionStartActivity<WorkActivity>() // ✅ Aquí se lanza la nueva vista
                 )
             }
         }
